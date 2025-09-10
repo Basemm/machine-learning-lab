@@ -17,9 +17,9 @@ def get_dataset():
   stratified_train_set, stratified_test_set = train_test_split(df, test_size=0.2, stratify=df["income_category"], random_state=42)
 
   X_train = stratified_train_set.drop("median_house_value", axis=1)
-  y_train = stratified_train_set["median_house_value"]
+  y_train = stratified_train_set[["median_house_value"]]
 
   X_test = stratified_test_set.drop("median_house_value", axis=1)
-  y_test = stratified_test_set["median_house_value"]
+  y_test = stratified_test_set[["median_house_value"]]
 
   return X_train, y_train, X_test, y_test
